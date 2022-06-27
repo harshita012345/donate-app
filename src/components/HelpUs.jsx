@@ -12,87 +12,89 @@ import heart8 from "../assets/Images/heart-icon8.png";
 import heart9 from "../assets/Images/heart-icon9.png";
 import heart10 from "../assets/Images/heart-icon10.png";
 import heart11 from "../assets/Images/heart-icon11.png";
+import hope from "../assets/Images/hope.jpg";
+import { Col, Container, Row } from "react-bootstrap";
 
 const HelpUs = () => {
     return (
-        <section class="service-area text-center"><img src={heart1} alt=""
-            class="heart-icon heart-icon-1" /><img src={heart2} alt=""
-                class="heart-icon heart-icon-2" /><img src={heart3} alt=""
-                    class="heart-icon heart-icon-3" /><img src={heart4} alt=""
-                        class="heart-icon heart-icon-4" /><img src={heart5} alt=""
-                            class="heart-icon heart-icon-5" /><img src={heart6} alt=""
-                                class="heart-icon heart-icon-6" /><img src={heart7} alt=""
-                                    class="heart-icon heart-icon-7" /><img src={heart8} alt=""
-                                        class="heart-icon heart-icon-8" /><img src={heart9} alt=""
-                                            class="heart-icon heart-icon-9" /><img src={heart10} alt=""
-                                                class="heart-icon heart-icon-10" /><img src={heart11} alt=""
-                                                    class="heart-icon heart-icon-11" />
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="section-heading service-heading">
-                            <div class="section-icon"><img src={sectionImg} alt="section-icon" /></div>
-                            <h2 class="section__title">We Believe that We can Save More Lifes with you</h2>
-                            <p class="section__meta">help us now</p>
+        <section className="service-area text-center"><img src={heart1} alt=""
+            className="heart-icon heart-icon-1" /><img src={heart2} alt=""
+                className="heart-icon heart-icon-2" /><img src={heart3} alt=""
+                    className="heart-icon heart-icon-3" /><img src={heart4} alt=""
+                        className="heart-icon heart-icon-4" /><img src={heart5} alt=""
+                            className="heart-icon heart-icon-5" /><img src={heart6} alt=""
+                                className="heart-icon heart-icon-6" /><img src={heart7} alt=""
+                                    className="heart-icon heart-icon-7" /><img src={heart8} alt=""
+                                        className="heart-icon heart-icon-8" /><img src={heart9} alt=""
+                                            className="heart-icon heart-icon-9" /><img src={heart10} alt=""
+                                                className="heart-icon heart-icon-10" /><img src={heart11} alt=""
+                                                    className="heart-icon heart-icon-11" />
+            <Container>
+                <Row>
+                    <div className="col-lg-8 mx-auto">
+                        <div className="section-heading service-heading">
+                            <div className="section-icon"><img src={sectionImg} alt="section-icon" /></div>
+                            <h2 className="section__title">We Believe that We can Save More Lifes with you</h2>
+                            <p className="section__meta">help us now</p>
                         </div>
+                    </div>
+                </Row>
+                <Row className="service-wrap" md={4} sm={2} xs={1}>
+                    <Col>
+                        <div className="service-item service-item1">
+                            <div className="service-item-inner">
+                                <div className="service-icon"><i class="fa fa-hands-helping"></i></div>
+                                <div className="service-content">
+                                    <h4 className="service__title">hope</h4>
+                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
+                                        wesbites.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="service-item service-item2">
+                            <div className="service-item-inner">
+                                <div className="service-icon"><i class="fa fa-hands-praying"></i></div>
+                                <div className="service-content">
+                                    <h4 className="service__title">prayers</h4>
+                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
+                                        wesbites.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="service-item service-item3">
+                            <div className="service-item-inner">
+                                <div className="service-icon"><i className="fa fa-earth"></i></div>
+                                <div className="service-content">
+                                    <h4 className="service__title">peace</h4>
+                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
+                                        wesbites.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="service-item service-item4">
+                            <div className="service-item-inner">
+                                <div className="service-icon"><i className="fa fa-hand-holding-heart"></i></div>
+                                <div className="service-content">
+                                    <h4 className="service__title">donation</h4>
+                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
+                                        wesbites.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="button-shared"><a href="donate" className="theme-btn">donate now</a></div>
                     </div>
                 </div>
-                <div class="row service-wrap">
-                    <div class="col">
-                        <div class="service-item service-item1">
-                            <div class="service-item-inner">
-                                <div class="service-icon"><i class="icon-peace-1"></i></div>
-                                <div class="service-content">
-                                    <h4 class="service__title">hope</h4>
-                                    <p class="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="service-item service-item2">
-                            <div class="service-item-inner">
-                                <div class="service-icon"><i class="icon-praying"></i></div>
-                                <div class="service-content">
-                                    <h4 class="service__title">prayers</h4>
-                                    <p class="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="service-item service-item3">
-                            <div class="service-item-inner">
-                                <div class="service-icon"><i class="icon-peace"></i></div>
-                                <div class="service-content">
-                                    <h4 class="service__title">peace</h4>
-                                    <p class="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="service-item service-item4">
-                            <div class="service-item-inner">
-                                <div class="service-icon"><i class="icon-heart"></i></div>
-                                <div class="service-content">
-                                    <h4 class="service__title">donation</h4>
-                                    <p class="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="button-shared"><a href="donate" class="theme-btn">donate now</a></div>
-                    </div>
-                </div>
-            </div>
+            </Container>
         </section>
     )
 }

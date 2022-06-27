@@ -230,3 +230,23 @@
     background-color: #f1ae44;
     color: #fff;
 }
+
+@media (max-width: 375px) {
+    .breadcrumb-area {
+        .breadcrumb-content {
+            .breadcrumb__title {
+                font-size: 46px;
+            }
+        }
+    }
+}
+
+@media (max-width:296px) {
+    .breadcrumb-area {
+        .breadcrumb-content {
+            .breadcrumb__list {
+                padding: 0 0px 0 15px;
+            }
+        }
+    }
+}

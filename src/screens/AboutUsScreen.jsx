@@ -4,51 +4,38 @@ import Header from "../components/Header";
 import Map from "../components/Map";
 import OurVolunteer from "../components/OurVolunteer";
 import HelpUs from "../components/HelpUs";
-
-import "../assets/scss/About.scss";
-import "../assets/scss/Common.scss";
+import PageHeader from "../components/PageHeader";
 
 import sectionImg from "../assets/Images/section-icon.png";
 import about1 from "../assets/Images/about-img.jpg";
 import about2 from "../assets/Images/about-img2.jpg";
 import faqImg from "../assets/Images/faq-img.jpg";
 
+import "../assets/scss/About.scss";
+import "../assets/scss/Common.scss";
+
 const AboutUsScreen = () => {
     return (
         <>
             <Header />
-            <section class="breadcrumb-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="breadcrumb-content">
-                                <h2 class="breadcrumb__title">About</h2>
-                                <ul class="breadcrumb__list">
-                                    <li class="active__list-item"><a href="/">home</a></li>
-                                    <li>About</li>
-                                </ul>
-                            </div>
+            <PageHeader title="About" />
+            <section className="about-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="about-large-img"><img src={about1} alt="" /></div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <section class="about-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="about-large-img"><img src={about1} alt="" /></div>
+                        <div className="col-lg-5">
+                            <div className="about-semi-img"><img src={about2} alt="" /></div>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="about-semi-img"><img src={about2} alt="" /></div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="about-heading">
-                                <div class="section-heading">
-                                    <div class="section-icon"><img src={sectionImg} alt="section-icon" />
+                        <div className="col-lg-7">
+                            <div className="about-heading">
+                                <div className="section-heading">
+                                    <div className="section-icon"><img src={sectionImg} alt="section-icon" />
                                     </div>
-                                    <h2 class="section__title">Discover About Oxpitan</h2>
-                                    <p class="section__meta">learn about non profit agency</p>
-                                    <p class="section__desc">Tincidunt elit magnis nulla facilisis sagittis maecenas.
+                                    <h2 className="section__title">Discover About Oxpitan</h2>
+                                    <p className="section__meta">learn about non profit agency</p>
+                                    <p className="section__desc">Tincidunt elit magnis nulla facilisis sagittis maecenas.
                                         Sapien nunced amet ultrices, dolores sit ipsum velit purus aliquet, massa
                                         fringilla leo orcium dolors sit amet elit magnis amet ultrices lorem ipsum is
                                         simply free text purusrfed aliquet. Lorem ipsum dolor sit amet, consectetuer
@@ -62,41 +49,41 @@ const AboutUsScreen = () => {
                 </div>
             </section>
             <OurVolunteer />
-            <section class="faq-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="section-heading">
-                                <div class="section-icon"><img src={sectionImg} alt="section-icon" /></div>
-                                <h2 class="section__title">Have any Question?</h2>
-                                <p class="section__meta">frequently asked questions</p>
+            <section className="faq-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <div className="section-heading">
+                                <div className="section-icon"><img src={sectionImg} alt="section-icon" /></div>
+                                <h2 className="section__title">Have any Question?</h2>
+                                <p className="section__meta">frequently asked questions</p>
                             </div>
-                            <div class="faq-img-box"><img src={faqImg} alt="" /></div>
+                            <div className="faq-img-box"><img src={faqImg} alt="" /></div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="accordion-container">
-                                <div class="ac">
-                                    <h2 class="ac-q" tabindex="0">Make a difference in the life of a child</h2>
-                                    <div class="ac-a">
-                                        <p class="accordion__content-desc">Suspendisse finibus urna mauris, vitae
+                        <div className="col-lg-6">
+                            <div className="accordion-container">
+                                <div className="ac">
+                                    <h2 className="ac-q" tabindex="0">Make a difference in the life of a child</h2>
+                                    <div className="ac-a">
+                                        <p className="accordion__content-desc">Suspendisse finibus urna mauris, vitae
                                             consequat quam blandit vel. Vestibulum leo ligula, molestie ullamcorper
                                             vulputate vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
                                             metus. There are many variations of eration in some form.</p>
                                     </div>
                                 </div>
-                                <div class="ac">
-                                    <h2 class="ac-q" tabindex="0">Let’s do the right thing now</h2>
-                                    <div class="ac-a">
-                                        <p class="accordion__content-desc">Suspendisse finibus urna mauris, vitae
+                                <div className="ac">
+                                    <h2 className="ac-q" tabindex="0">Let’s do the right thing now</h2>
+                                    <div className="ac-a">
+                                        <p className="accordion__content-desc">Suspendisse finibus urna mauris, vitae
                                             consequat quam blandit vel. Vestibulum leo ligula, molestie ullamcorper
                                             vulputate vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
                                             metus. There are many variations of eration in some form.</p>
                                     </div>
                                 </div>
-                                <div class="ac">
-                                    <h2 class="ac-q" tabindex="0">Join your hand with us for a better life</h2>
-                                    <div class="ac-a">
-                                        <p class="accordion__content-desc">Suspendisse finibus urna mauris, vitae
+                                <div className="ac">
+                                    <h2 className="ac-q" tabindex="0">Join your hand with us for a better life</h2>
+                                    <div className="ac-a">
+                                        <p className="accordion__content-desc">Suspendisse finibus urna mauris, vitae
                                             consequat quam blandit vel. Vestibulum leo ligula, molestie ullamcorper
                                             vulputate vitae sodales commodo nisl. Nulla facilisi. Pellentesque est
                                             metus. There are many variations of eration in some form.</p>

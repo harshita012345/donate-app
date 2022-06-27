@@ -1,14 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { Suspense } from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import { BrowserRouter } from 'react-router-dom';
+import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// const store = configureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    {/* <BrowserRouter> */}
+      <Suspense fallback={'Loading...'}>
+        <App />
+      </Suspense>
+    {/* </BrowserRouter> */}
+  </Provider>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
