@@ -7,23 +7,26 @@ import team from "../assets/Images/team.jpg";
 import team2 from "../assets/Images/team2.jpg";
 import team3 from "../assets/Images/team3.jpg";
 import team4 from "../assets/Images/team4.jpg";
+import { useTranslation } from "react-i18next";
 
-const OurVolunteer = () => {
+const OurVolunteer = ({ Animation }) => {
+    const { t } = useTranslation();
+    const dispatch = useDispatch();
     const volunteerList = useSelector((state) => state.volunteer);
     const { loading, error, volunteers } = volunteerList;
-    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(listVolunteers({}));
-    }, [dispatch]);
+        window.addEventListener("scroll", Animation);
+    }, []);
     return (
-        <section className="team-area text-center">
+        <section className="team-area text-center reveal">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 mx-auto">
                         <div className="section-heading">
                             <div className="section-icon"><img src={sectionImg} alt="section-icon" /></div>
-                            <h2 className="section__title">Our Volunteers</h2>
-                            <p className="section__meta">meet profesionals</p>
+                            <h2 className="section__title">{t('our_volunteer')}</h2>
+                            <p className="section__meta">{t('meet_profesion')}</p>
                         </div>
                     </div>
                 </div>
@@ -35,10 +38,10 @@ const OurVolunteer = () => {
                                     <div className="team__img"><img src={data.image} alt="team image" />
                                         <div className="team__img-links">
                                             <ul>
-                                                <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i className="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i className="fa fa-instagram"></i></a></li>
+                                                <li><a href="https://twitter.com/jeevandeepfoun1?s=20&t=ZmUI9AqsXAfrEv3DA8PdfQ"><i className="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://www.facebook.com/Jeevandeep2022/"><i className="fab fa-facebook"></i></a></li>
+                                                {/* <li><a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a></li> */}
+                                                <li><a href="https://www.instagram.com/jeevandeepfoundationsurat/?igshid=YmMyMTA2M2Y="><i className="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

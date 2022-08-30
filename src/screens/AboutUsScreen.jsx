@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Map from "../components/Map";
@@ -13,13 +13,20 @@ import faqImg from "../assets/Images/faq-img.jpg";
 
 import "../assets/scss/About.scss";
 import "../assets/scss/Common.scss";
+import { Animation } from "../common/Animation";
+import { useTranslation } from "react-i18next";
 
 const AboutUsScreen = () => {
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        window.addEventListener("scroll", Animation);
+    }, [])
     return (
         <>
             <Header />
-            <PageHeader title="About" />
-            <section className="about-area">
+            <PageHeader Animation={Animation} title={t("about")} />
+            <section className="about-area reveal">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -33,23 +40,17 @@ const AboutUsScreen = () => {
                                 <div className="section-heading">
                                     <div className="section-icon"><img src={sectionImg} alt="section-icon" />
                                     </div>
-                                    <h2 className="section__title">Discover About Oxpitan</h2>
-                                    <p className="section__meta">learn about non profit agency</p>
-                                    <p className="section__desc">Tincidunt elit magnis nulla facilisis sagittis maecenas.
-                                        Sapien nunced amet ultrices, dolores sit ipsum velit purus aliquet, massa
-                                        fringilla leo orcium dolors sit amet elit magnis amet ultrices lorem ipsum is
-                                        simply free text purusrfed aliquet. Lorem ipsum dolor sit amet, consectetuer
-                                        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus. penatibus
-                                        et magnis dis parturient montes, nascetur ridiculus.</p>
+                                    <h2 className="section__title">{t("about_title")}</h2>
+                                    <p className="section__meta">{t("about_support")}</p>
+                                    <p className="section__desc">{t("about_jeevandeep")}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <OurVolunteer />
-            <section className="faq-area">
+            <OurVolunteer Animation={Animation} />
+            {/* <section className="faq-area reveal">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
@@ -93,10 +94,10 @@ const AboutUsScreen = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-            <HelpUs />
-            <Map />
-            <Footer />
+            </section> */}
+            <HelpUs Animation={Animation} />
+            <Map Animation={Animation} />
+            <Footer Animation={Animation} />
         </>
     )
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import sectionImg from "../assets/Images/section-icon.png";
 import heart1 from "../assets/Images/heart-icon1.png";
@@ -14,8 +14,13 @@ import heart10 from "../assets/Images/heart-icon10.png";
 import heart11 from "../assets/Images/heart-icon11.png";
 import hope from "../assets/Images/hope.jpg";
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
-const HelpUs = () => {
+const HelpUs = ({ Animation }) => {
+    const { t } = useTranslation();
+    useEffect(() => {
+        window.addEventListener("scroll", Animation);
+    }, [])
     return (
         <section className="service-area text-center"><img src={heart1} alt=""
             className="heart-icon heart-icon-1" /><img src={heart2} alt=""
@@ -29,13 +34,13 @@ const HelpUs = () => {
                                             className="heart-icon heart-icon-9" /><img src={heart10} alt=""
                                                 className="heart-icon heart-icon-10" /><img src={heart11} alt=""
                                                     className="heart-icon heart-icon-11" />
-            <Container>
+            <Container className="reveal">
                 <Row>
                     <div className="col-lg-8 mx-auto">
                         <div className="section-heading service-heading">
                             <div className="section-icon"><img src={sectionImg} alt="section-icon" /></div>
-                            <h2 className="section__title">We Believe that We can Save More Lifes with you</h2>
-                            <p className="section__meta">help us now</p>
+                            <h2 className="section__title">{t('we_believe')}</h2>
+                            <p className="section__meta">{t('help_us')}</p>
                         </div>
                     </div>
                 </Row>
@@ -45,9 +50,8 @@ const HelpUs = () => {
                             <div className="service-item-inner">
                                 <div className="service-icon"><i class="fa fa-hands-helping"></i></div>
                                 <div className="service-content">
-                                    <h4 className="service__title">hope</h4>
-                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
+                                    <h4 className="service__title">{t('hope')}</h4>
+                                    <p className="service__desc">{t("hope_desc")}</p>
                                 </div>
                             </div>
                         </div>
@@ -57,9 +61,8 @@ const HelpUs = () => {
                             <div className="service-item-inner">
                                 <div className="service-icon"><i class="fa fa-hands-praying"></i></div>
                                 <div className="service-content">
-                                    <h4 className="service__title">prayers</h4>
-                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
+                                    <h4 className="service__title">{t('prayer')}</h4>
+                                    <p className="service__desc">{t("prayer_desc")}</p>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +72,8 @@ const HelpUs = () => {
                             <div className="service-item-inner">
                                 <div className="service-icon"><i className="fa fa-earth"></i></div>
                                 <div className="service-content">
-                                    <h4 className="service__title">peace</h4>
-                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
+                                    <h4 className="service__title">{t('peace')}</h4>
+                                    <p className="service__desc">{t("peace_desc")}</p>
                                 </div>
                             </div>
                         </div>
@@ -81,9 +83,8 @@ const HelpUs = () => {
                             <div className="service-item-inner">
                                 <div className="service-icon"><i className="fa fa-hand-holding-heart"></i></div>
                                 <div className="service-content">
-                                    <h4 className="service__title">donation</h4>
-                                    <p className="service__desc">Lorem ipsum is simply free text available in the market
-                                        wesbites.</p>
+                                    <h4 className="service__title">{t("donation")}</h4>
+                                    <p className="service__desc">{t("donation_desc")}</p>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +92,7 @@ const HelpUs = () => {
                 </Row>
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="button-shared"><a href="donate" className="theme-btn">donate now</a></div>
+                        <div className="button-shared"><a href="donate" className="theme-btn">{t('donate_now')}</a></div>
                     </div>
                 </div>
             </Container>

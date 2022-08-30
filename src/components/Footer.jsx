@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
-const Footer = () => {
+const Footer = ({ Animation }) => {
+    const { t } = useTranslation();
+    useEffect(() => {
+        window.addEventListener("scroll", Animation);
+    }, [])
     return (
         <div>
-            <section className="footer-area">
+            <section className="footer-area reveal">
                 <div className="footer-top">
                     <Container>
-                        <Row className="footer-widget-wrap "xs={1} sm={2} md={2} lg={5} xl={5}>
-                            <Col className="footer-item footer-item1">
+                        <Row className="footer-widget-wrap justify-content-end" xs={1} sm={2} md={2} lg={5} xl={5}>
+                            {/* <Col className="footer-item footer-item1">
                                 <h3 className="widget__title">about</h3>
                                 <ul className="foot__links">
                                     <li><a href="#">causes</a></li>
@@ -45,27 +50,27 @@ const Footer = () => {
                                     <li><a href="#">Being Volunteer</a></li>
                                     <li><a href="#">Raise fund to help</a></li>
                                 </ul>
-                            </Col>
+                            </Col> */}
                             <Col className="footer-item footer-item4">
                                 <h3 className="widget__title">contact</h3>
                                 <ul className="contact__info">
-                                    <li>660 Broklyn Street, 88 New York</li>
-                                    <li><a href="mailto:jeevandeepfoundationsurat@gmail.com">jeevandeepfoundationsurat@gmail.com</a></li>
-                                    <li><a href="tel:+91 98799 55855">+91 98799 55855</a></li>
+                                    <li>{t("company_address")}</li>
+                                    <li><a href="mailto: info@jeevandeepfoundation.in"> info@jeevandeepfoundation.in</a></li>
+                                    <li><a href="tel:+91 99784 41000">+91 99784 41000</a></li>
                                 </ul>
                                 <div className="footer__social">
                                     <ul>
-                                        <li><a href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-                                        <li><a href="https://www.facebook.com/"><i className="fab fa-facebook"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a></li>
-                                        <li><a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://twitter.com/jeevandeepfoun1?s=20&t=ZmUI9AqsXAfrEv3DA8PdfQ"><i className="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.facebook.com/Jeevandeep2022/"><i className="fab fa-facebook"></i></a></li>
+                                        {/* <li><a href="https://www.pinterest.com/"><i className="fab fa-pinterest"></i></a></li> */}
+                                        <li><a href="https://www.instagram.com/jeevandeepfoundationsurat/?igshid=YmMyMTA2M2Y="><i className="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </Col>
                         </Row>
                     </Container>
                 </div>
-                <div className="footer-copyright">
+                {/* <div className="footer-copyright">
                     <Container>
                         <Row>
                             <Col>
@@ -75,7 +80,7 @@ const Footer = () => {
                             </Col>
                         </Row>
                     </Container>
-                </div>
+                </div> */}
             </section>
             <div id="back-to-top" className=""><i className="fa fa-angle-up" title="Go top"></i></div>
         </div>

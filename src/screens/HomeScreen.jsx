@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 
 import Header from "../components/Header";
 import Map from "../components/Map";
@@ -12,23 +12,26 @@ import MixArea from "../components/MixArea";
 import MixAreaTwo from "../components/MixAreaTwo";
 import HelpingArea from "../components/HelpingArea";
 import BlogHome from "../components/BlogHome";
+import '../assets/scss/Animation.scss'
+import { Animation } from "../common/Animation";
 
 const HomeScreen = () => {
+
     return (
         <>
             <Header />
-            <HomeCarousel />
-            <EntryArea />
-            <HelpUs />
+            <HomeCarousel Animation={Animation} />
+            <EntryArea Animation={Animation} />
+            <HelpUs Animation={Animation} />
             <div>
-                <MixArea />
-                <MixAreaTwo />
+                {/* <MixArea Animation={Animation} /> */}
+                {/* <MixAreaTwo Animation={Animation} /> */}
             </div>
-            <HelpingArea />
-            <OurVolunteer />
-            <BlogHome />
-            <Map />
-            <Footer />
+            <HelpingArea Animation={Animation} />
+            <OurVolunteer Animation={Animation} />
+            <BlogHome Animation={Animation} />
+            <Map Animation={Animation} />
+            <Footer Animation={Animation} />
         </>
     );
 };

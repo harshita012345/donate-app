@@ -26,7 +26,6 @@ export const getSlider = () => async (dispatch) => {
     dispatch({ type: SLIDER_GET_REQUEST });
     try {
         const { data } = await axios.get(`/api/v1/slider/`);
-        console.log("🚀 ~ file: volunteerActions.js ~ line 22 ~ becomeCreateVolunteer ~ data", data)
         dispatch({ type: SLIDER_GET_SUCCESS, payload: data });
     } catch (error) {
         dispatch({ type: SLIDER_GET_FAIL, payload: error.response.data })

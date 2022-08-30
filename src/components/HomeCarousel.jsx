@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Swiper from 'react-id-swiper';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSlider } from '../redux/actions/volunteerActions';
 // import 'swiper/swiper.min.css'
 
-const SliderOne = () => {
+const SliderOne = ({ Animation }) => {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     const sliderList = useSelector((state) => state?.getSlider)
     const { loading, sliderData, error } = sliderList;
-    console.log("sliderData", sliderData);
     const swiperRef = useRef(null);
     const [swiper, setSwiper] = useState(null);
 
@@ -42,10 +43,11 @@ const SliderOne = () => {
 
     useEffect(() => {
         dispatch(getSlider());
-    }, [dispatch])
+        window.addEventListener("load", Animation);
+    }, [])
 
     return (
-        <section className="slider-area">
+        <section className="slider-area reveal">
             <div className="homepage-slide1">
 
                 <Swiper getSwiper={setSwiper} {...params} ref={swiperRef} >
@@ -60,7 +62,7 @@ const SliderOne = () => {
                                                     <div className="slider-heading">
                                                         <p className="slider__meta">{slider?.name}</p>
                                                         <h2 className="slider__title">{slider.desc}</h2>
-                                                        <a href="#" className="theme-btn">discover more</a>
+                                                        <a href="#" className="theme-btn">{t('discover_more')}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,40 +71,6 @@ const SliderOne = () => {
                                 </div>
                             </div>
                         })}
-                    {/* <div className="single-slide-item slide-bg2">
-                        <div className="slide-item-table">
-                            <div className="slide-item-tablecell">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-md-7">
-                                            <div className="slider-heading">
-                                                <p className="slider__meta">welcome to oxpitan</p>
-                                                <h2 className="slider__title">Lend the helping hand get involved</h2>
-                                                <a href="#" className="theme-btn">discover more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="single-slide-item slide-bg3">
-                        <div className="slide-item-table">
-                            <div className="slide-item-tablecell">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-md-7">
-                                            <div className="slider-heading">
-                                                <p className="slider__meta">welcome to oxpitan</p>
-                                                <h2 className="slider__title">Lend the helping hand get involved</h2>
-                                                <a href="#" className="theme-btn">discover more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </Swiper>
                 <div className="owl-dots">
                     <div onClick={goNext} className="owl-dot"><span></span></div>

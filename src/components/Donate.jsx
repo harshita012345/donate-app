@@ -1,22 +1,24 @@
 import React from 'react';
 import img15 from "../assets/Images/img15.jpg"
 import author_avatar from "../assets/Images/author-avatar.jpg";
+import { useTranslation } from 'react-i18next';
 
-const Donate = () => {
+const Donate = () => {    
+    const { t } = useTranslation();
     return (
         <section className="donate-area2">
         <div className="container">
             <div className="row donate-content-wrap">
                 <div className="col-lg-8">
                     <div className="donate-item">
-                        <h3 className="donate__title">Enter Your Donation</h3>
+                        <h3 className="donate__title">{t("enter_donate")}</h3>
                         <div className="form-shared">
                             <form action="#">
                                 <div className="row">
                                     <div className="col-lg-12">
                                         <div className="yellow-form">
                                             <input type="number" className="form-control" />
-                                                <span className="dollar-sign">$</span>
+                                                <span className="dollar-sign">₹</span>
                                                 <span className="number-symble">.00</span>
                                         </div>
                                     </div>
@@ -25,41 +27,41 @@ const Donate = () => {
                         </div>
                     </div>
                     <div className="donate-item">
-                        <h3 className="donate__title">Personal Info</h3>
+                        <h3 className="donate__title">{t("personal_info")}</h3>
                         <div className="form-shared">
                             <form action="#">
                                 <div className="row">
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="First Name" />
+                                            <input type="text" className="form-control" placeholder={t("first_name")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Last Name" />
+                                            <input type="text" className="form-control" placeholder={t("last_name")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
                                             <input type="email" className="form-control"
-                                                   placeholder="Email Address" />
+                                                   placeholder={t("email_add")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Phone Number" />
+                                            <input type="text" className="form-control" placeholder={t("phone_no")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Address" />
+                                            <input type="text" className="form-control" placeholder={t("address")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
                                             <div className="select-group">
                                                 <select className="select-option">
-                                                    <option value="Country">Country</option>
+                                                    <option value="Country">{t("country")}</option>
                                                     <option value="usa">Usa</option>
                                                     <option value="Uk">Uk</option>
                                                     <option value="Pakistan">Pakistan</option>
@@ -71,20 +73,20 @@ const Donate = () => {
                                     </div>
                                     <div className="col-lg-12">
                                         <textarea className="textarea" name="message"
-                                                  placeholder="Leave a Comment"></textarea>
+                                                  placeholder={t("leave_comment")}></textarea>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div className="donate-item">
-                        <h3 className="donate__title">Payment Info</h3>
+                        <h3 className="donate__title">{t("payment_info")}</h3>
                         <div className="form-shared">
                             <form action="#">
                                 <div className="row">
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Card Number" />
+                                            <input type="text" className="form-control" placeholder={t("card_no")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
@@ -95,25 +97,25 @@ const Donate = () => {
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
                                             <input type="text" className="form-control"
-                                                   placeholder="Card Code (CVC)" />
+                                                   placeholder={t("card_code")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
                                             <input type="text" className="form-control"
-                                                   placeholder="Billing Address" />
+                                                   placeholder={t("billing_add")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="City" />
+                                            <input type="text" className="form-control" placeholder={t("city")} />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6">
                                         <div className="form-group">
                                             <div className="select-group">
                                                 <select className="select-option">
-                                                    <option value="Country">Country</option>
+                                                    <option value="Country">{t("country")}</option>
                                                     <option value="usa">Usa</option>
                                                     <option value="Uk">Uk</option>
                                                     <option value="Pakistan">Pakistan</option>
@@ -124,14 +126,14 @@ const Donate = () => {
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
-                                        <button className="theme-btn submit__btn">donate now</button>
+                                        <button className="theme-btn submit__btn">{t("donate_now")}</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4">
+                {/* <div className="col-lg-4">
                     <div className="sidebar-shared">
                         <div className="side-widget blog-content">
                             <div className="blog-item">
@@ -165,7 +167,7 @@ const Donate = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     </section>
